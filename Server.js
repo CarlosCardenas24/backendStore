@@ -1,5 +1,8 @@
-const stripe = require('stripe')('sk_test_51N36cdFFcNa2tnPmw7kAzNBi9ZgHGi0C19fpcVXkULfglPV8YqpdNuWZuytCsw1AD1ZDyEo5IuTZHK5sDNWZkMZ400MSZoRDvl');
-const express = require('express');
+require('dotenv').config()
+
+const STRIPE_KEY = process.env.REACT_APP_STRIPE_KEY
+const stripe = require('stripe')(`${STRIPE_KEY}`)
+const express = require('express')
 const cors = require('cors')
 
 const app = express();
